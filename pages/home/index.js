@@ -4,8 +4,9 @@ const footer    = document.querySelector('footer')
 let count       = 0
 
 const observer = new IntersectionObserver( entries => {
-    console.log(entries)
+    // console.log(entries)
     if (entries.some(entry => entry.isIntersecting)){
+        console.log(entries)
         renderNewNews()
     }
 })
@@ -23,23 +24,8 @@ async function renderNews (list) {
 
     const request = await list
     const arr     = request.news 
-    const newArrLocalStorage =  []
 
 
-
-    // if (localStorage.getItem("@Living:newArrLocalStorage")){
-    
-    //          const parseJson = JSON.parse(localStorage.getItem("@Living:newArrLocalStorage")) || []
-    //          const arrLocalStorage = [...parseJson, ...arr]
-    
-    //          localStorage.setItem("@Living:newArrLocalStorage", JSON.stringify(arrLocalStorage))
-    //       }else{
-    
-    //          localStorage.setItem("@Living:newArrLocalStorage", JSON.stringify(arr))
-    //       }
-       
-    
-    // root.innerHTML = ""
 
     arr.map(element => {
 
@@ -111,13 +97,19 @@ async function findNews (id) {
     window.location.replace("/pages/post/index.html")
 }
 
-async function renderByCategory (list){
+async function renderByCategory (){
 
     const tagsLi = document.querySelectorAll("li")
 
-
-    const request = await list
-    const arr     = request.news  
+    const arr = []
+    for(let i = 0; i < 3; i++){
+    
+        const request = await getInfoApi (i)
+        const list    = request.news 
+        arr.push(...list)
+    }
+    // const request = await list
+    // const arr     = request.news  
 
     tagsLi.forEach(li => {
         li.addEventListener("click", () => {
@@ -128,8 +120,7 @@ async function renderByCategory (list){
             if(li.innerText == "Todos"){
                 renderNews(getInfoApi())
             }else{
-                // const parseJson = JSON.parse(localStorage.getItem("@Living:newArrLocalStorage"))
-
+                
                 newObjet.news = arr.filter(elem => elem.category.toLocaleLowerCase().includes(li.innerText.toLocaleLowerCase())) 
                 console.log(newObjet)  
                 renderNews(newObjet)
@@ -139,4 +130,18 @@ async function renderByCategory (list){
         })
     })
 }
-renderByCategory(getInfoApi())
+renderByCategory()
+
+// async function opa() {
+//     const arr = []
+//     for(let i = 0; i < 3; i++){
+    
+//         const request = await getInfoApi (i)
+//         const list    = request.news 
+//         arr.push(...list)
+//     }
+//     console.log(arr)
+//     return arr
+// }
+
+// opa()
