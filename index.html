@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/Rectangle 4.svg" type="image/x-icon">
     <meta name="description" content="">
-    
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="/styles/displays.css">
     <link rel="stylesheet" href="/styles/spaces.css">
@@ -14,20 +13,26 @@
     <link rel="stylesheet" href="/styles/buttons.css">
     <link rel="stylesheet" href="/styles/cards.css">
 
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="/pages/home/index.css">
     <title>Living</title>
 </head>
-<body>
-    <header class="container flex justify-between p-2-top mb-3">
+<body class="container">
+    <header class="flex justify-around p-2-top mb-3">
+       <section class="flex flex-col justify-center gap-2">
         <div class="flex items-center gap mb-2">
             <span class="logo-box">fffff</span>
             <h3 class="title-3">Living</h3>
         </div>
-        <button id="home" class="button-default color-default">home</button>
+            <h1 class="title-1">Cuidando de cada detalhe da sua casa</h1>
+            <p class="text-1">Trazendo uma nova e incrível experiência para você e para seu lar </p>
+            <a href="#section"><b>Consumir conteúdos</b></a>
+       </section>
+       <section>
+            <img class="img-homePage" src="/assets/Rectangle 2.svg" alt="">
+       </section>
     </header>
-    <main class="flex flex-col gap-2">
-        <article class="container flex flex-col gap-3"></article>
-        <ul class="container flex gap">
+    <main class="flex flex-col gap">
+        <ul class="flex gap">
             <li class="button-default color-default">Todos</li>
             <li class="button-default color-default">Pintura</li>
             <li class="button-default color-default">Decoração</li>
@@ -37,25 +42,16 @@
             <li class="button-default color-default">Reforma</li>
             <li class="button-default color-default">Aromas</li>
         </ul>
+        <section class="root flex wrap justify-around"></section>
     </main>
     <footer class="footer flex justify-around items-center">
-        <div class="container flex justify-around items-center">
-            <div class="flex gap">
-                <span class="logo-box">fffff</span>
-                <h3 class="title-3">Living</h3>
-            </div>
-            <p style="text-align: center; width: 40%;">
-                The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.
-            </p>
-            <button class="button-default">Voltar para o topo
-            </button>
+        <div class="flex gap">
+        <span class="logo-box">fffff</span>
+        <h3 class="title-3">Living</h3>
         </div>
+        <p style="text-align: center; width: 40%;">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+        <button class="button-default">Voltar para o topo</button>
     </footer>
-    <script src="/pages/post/index.js"></script>
+    <script src="pages/home/index.js"></script>
 </body>
 </html>
-
-<!-- <h1></h1>
-<p></p>
-<img src="" alt="">
-<p></p> -->
